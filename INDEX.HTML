@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TAHERYS — Mocha Cold Brew Digital Label</title>
+<style>
+:root {
+--bg-color: #FAF6F0;
+--card-bg: #FFFFFF;
+--text-main: #12100F;
+--brand-red: #E41414;
+--accent-tan: #96826E;
+--accent-cream: #EEE3D0;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+background-color: var(--bg-color);
+color: var(--text-main);
+font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+padding: 20px 16px;
+display: flex;
+justify-content: center;
+min-height: 100vh;
+}
+
+.app-container {
+width: 100%;
+max-width: 420px;
+}
+
+/* Header */
+.brand-header {
+text-align: center;
+margin-bottom: 20px;
+border-bottom: 2px solid var(--text-main);
+padding-bottom: 12px;
+}
+
+.brand-title {
+font-size: 28px;
+font-weight: 900;
+letter-spacing: 3px;
+color: var(--brand-red);
+text-transform: uppercase;
+}
+
+.product-title {
+font-size: 14px;
+font-weight: 700;
+letter-spacing: 1px;
+margin-top: 4px;
+}
+
+.tagline {
+font-size: 11px;
+font-style: italic;
+color: var(--accent-tan);
+margin-top: 2px;
+}
+
+/* FDA Nutrition Panel Box */
+.nutrition-panel {
+background: var(--card-bg);
+border: 2px solid var(--text-main);
+padding: 14px;
+font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.panel-header {
+font-size: 32px;
+font-weight: 900;
+line-height: 0.9;
+letter-spacing: -0.5px;
+font-family: 'Arial Black', Impact, sans-serif;
+}
+
+.serving-info {
+font-size: 11px;
+margin-top: 6px;
+padding-bottom: 6px;
+border-bottom: 10px solid var(--text-main);
+}
+
+.amount-per-serving {
+font-size: 9px;
+font-weight: bold;
+margin-top: 6px;
+}
+
+.calories-row {
+display: flex;
+justify-content: space-between;
+align-items: flex-end;
+border-bottom: 5px solid var(--text-main);
+padding-bottom: 4px;
+margin-bottom: 6px;
+}
+
+.calories-label { font-size: 22px; font-weight: 900; }
+.calories-value { font-size: 36px; font-weight: 900; line-height: 0.8; }
+
+.dv-header {
+text-align: right;
+font-size: 9px;
+font-weight: bold;
+padding-bottom: 4px;
+border-bottom: 1px solid var(--text-main);
+}
+
+.row {
+display: flex;
+justify-content: space-between;
+padding: 5px 0;
+font-size: 11px;
+border-bottom: 1px solid #ddd;
+}
+
+.row.thick { border-bottom: 10px solid var(--text-main); }
+.row.medium { border-bottom: 5px solid var(--text-main); }
+.indent { padding-left: 14px; }
+.indent-2 { padding-left: 28px; }
+
+.footnote {
+font-size: 8px;
+line-height: 1.3;
+padding-top: 6px;
+border-top: 1px solid var(--text-main);
+margin-top: 6px;
+}
+
+.caffeine-bar {
+margin-top: 8px;
+padding-top: 6px;
+border-top: 2px solid var(--text-main);
+display: flex;
+justify-content: space-between;
+font-size: 11px;
+font-weight: bold;
+}
+
+/* Section Boxes */
+.info-card {
+background: var(--card-bg);
+border: 1px solid var(--text-main);
+border-radius: 6px;
+padding: 14px;
+margin-top: 16px;
+}
+
+.card-title {
+font-size: 12px;
+font-weight: 800;
+text-transform: uppercase;
+letter-spacing: 1px;
+color: var(--brand-red);
+margin-bottom: 8px;
+border-bottom: 1px dashed var(--accent-tan);
+padding-bottom: 4px;
+}
+
+.ingredient-list {
+font-size: 11px;
+line-height: 1.5;
+}
+
+.allergen-tag {
+margin-top: 10px;
+padding: 8px;
+background: var(--accent-cream);
+border-left: 3px solid var(--brand-red);
+font-size: 10px;
+font-weight: bold;
+}
+
+.specs-list {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 8px;
+font-size: 11px;
+}
+
+.spec-item {
+display: flex;
+flex-direction: column;
+}
+
+.spec-label { color: var(--accent-tan); font-size: 9px; font-weight: 700; text-transform: uppercase; }
+.spec-val { font-weight: 600; }
+
+/* Footer */
+.footer {
+text-align: center;
+margin-top: 24px;
+padding-bottom: 24px;
+font-size: 10px;
+color: var(--accent-tan);
+}
+</style>
+</head>
+<body>
+
+<div class="app-container">
+
+<header class="brand-header">
+<h1 class="brand-title">TAHERYS</h1>
+<div class="product-title">MOCHA COLD BREW (12 FL OZ)</div>
+<div class="tagline">clarity through craft</div>
+</header>
+
+<!-- Official Nutrition Facts Panel -->
+<main class="nutrition-panel">
+<div class="panel-header">Nutrition Facts</div>
+<div class="serving-info">
+1 serving per container<br>
+<strong>Serving size &nbsp;&nbsp;&nbsp;&nbsp; 1 bottle (355 mL / 12 fl oz)</strong>
+</div>
+
+<div class="amount-per-serving">Amount per serving</div>
+<div class="calories-row">
+<span class="calories-label">Calories</span>
+<span class="calories-value">60</span>
+</div>
+
+<div class="dv-header">% Daily Value*</div>
+
+<div class="row">
+<span><strong>Total Fat</strong> 2.5g</span>
+<span><strong>3%</strong></span>
+</div>
+<div class="row indent">
+<span>Saturated Fat 0.5g</span>
+<span><strong>3%</strong></span>
+</div>
+<div class="row indent">
+<span><em>Trans</em> Fat 0g</span>
+<span></span>
+</div>
+
+<div class="row">
+<span><strong>Cholesterol</strong> 0mg</span>
+<span><strong>0%</strong></span>
+</div>
+
+<div class="row">
+<span><strong>Sodium</strong> 50mg</span>
+<span><strong>2%</strong></span>
+</div>
+
+<div class="row">
+<span><strong>Total Carbohydrate</strong> 8g</span>
+<span><strong>3%</strong></span>
+</div>
+<div class="row indent">
+<span>Dietary Fiber 0g</span>
+<span><strong>0%</strong></span>
+</div>
+<div class="row indent">
+<span>Total Sugars 8g</span>
+<span></span>
+</div>
+<div class="row indent-2">
+<span>Includes 8g Added Sugars</span>
+<span><strong>16%</strong></span>
+</div>
+
+<div class="row thick">
+<span><strong>Protein</strong> 0g</span>
+<span><strong>0%</strong></span>
+</div>
+
+<div class="row">
+<span>Vitamin D 0mcg</span>
+<span>0%</span>
+</div>
+<div class="row">
+<span>Calcium 40mg</span>
+<span>4%</span>
+</div>
+<div class="row">
+<span>Iron 0.3mg</span>
+<span>2%</span>
+</div>
+<div class="row thick">
+<span>Potassium 120mg</span>
+<span>2%</span>
+</div>
+
+<p class="footnote">
+* The % Daily Value (DV) tells you how much a nutrient in a serving of food contributes to a daily diet. 2,000 calories a day is used for general nutrition advice.
+</p>
+
+<div class="caffeine-bar">
+<span>Caffeine Content</span>
+<span>~175 mg</span>
+</div>
+</main>
+
+<!-- Ingredients Card -->
+<section class="info-card">
+<h2 class="card-title">Ingredients</h2>
+<p class="ingredient-list">
+Cold-Brew Coffee, Water, Almond Milk (Water, Almonds, Calcium Carbonate, Sea Salt, Potassium Citrate, Gellan Gum, Natural Flavors, Sunflower Lecithin, Vitamins), Café Mocha Creamer (Water, Sugar, Soybean Oil, Micellar Casein [a milk derivative], Cocoa Processed with Alkali, Mono- and Diglycerides, Dipotassium Phosphate, Cellulose Gel, Natural and Artificial Flavor, Cellulose Gum, Carrageenan).
+</p>
+<div class="allergen-tag">
+CONTAINS: TREE NUTS (ALMONDS), MILK (MICELLAR CASEIN DERIVATIVE).
+</div>
+</section>
+
+<!-- Product Details Card -->
+<section class="info-card">
+<h2 class="card-title">Product Specs</h2>
+<div class="specs-list">
+<div class="spec-item">
+<span class="spec-label">Volume</span>
+<span class="spec-val">12 fl oz (355 mL)</span>
+</div>
+<div class="spec-item">
+<span class="spec-label">Beans</span>
+<span class="spec-val">Colombia & Brazil</span>
+</div>
+<div class="spec-item">
+<span class="spec-label">Roast</span>
+<span class="spec-val">Medium-Dark</span>
+</div>
+<div class="spec-item">
+<span class="spec-label">Storage</span>
+<span class="spec-val">Keep Refrigerated</span>
+</div>
+</div>
+</section>
+
+<footer class="footer">
+TAHERYS Coffee Co. &bull; drinktaherys.com
+</footer>
+
+</div>
+
+</body>
+</html>
